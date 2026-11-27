@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayesha Kazi | Machine Learning & AI Engineer</title>
+  <meta name="description" content="Portfolio of Ayesha Kazi — B.S. Computer Science (George Mason University). Machine Learning Engineer, AI Engineer, and Data Scientist building end-to-end predictive, geospatial, and optimization systems." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#0B0F19',
+            surface: '#111827',
+            surfaceHover: '#161F33',
+            borderSubtle: '#1F2937',
+            cyanAccent: '#38BDF8',
+            emeraldAccent: '#10B981',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-obsidian text-slate-200 font-sans antialiased selection:bg-sky-500/30 selection:text-sky-200 overflow-x-hidden">
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300 translate-y-2 opacity-0">
+    <div class="bg-slate-900 border border-emerald-500/40 text-emerald-300 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-sm font-medium">
+      <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+      <span id="toast-message">Copied to clipboard!</span>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-obsidian/85 backdrop-blur-md border-b border-borderSubtle">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-emerald-400 flex items-center justify-center text-obsidian font-mono font-bold text-sm shadow-lg shadow-sky-500/20">
+          AK
+        </div>
+        <span class="font-semibold text-white tracking-tight group-hover:text-sky-400 transition-colors">Ayesha Kazi</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="#systems" class="hover:text-white transition-colors">Deployed Systems</a>
+        <a href="#capabilities" class="hover:text-white transition-colors">Architecture & Skills</a>
+        <a href="#education" class="hover:text-white transition-colors">Education</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button
+          onclick="openPitchModal()"
+          class="px-3 py-2 rounded-lg bg-surface hover:bg-surfaceHover border border-borderSubtle text-xs sm:text-sm font-medium text-slate-200 transition-all cursor-pointer"
+        >
+          Recruiter Pitch
+        </button>
+        <button
+          onclick="openCustomizerModal()"
+          title="Configure your Streamlit & LinkedIn URLs and export ready-to-host HTML"
+          class="px-3 py-2 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-xs sm:text-sm font-mono text-sky-400 transition-all cursor-pointer flex items-center gap-1.5"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="hidden sm:inline">Edit URLs</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="top" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero Section -->
+    <section class="py-16 sm:py-24 relative">
+      <!-- Subtle Background Glow -->
+      <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-sky-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+      <div class="relative max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Open to ML Engineer, AI Engineer &amp; Data Scientist Roles
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-5">
+          Ayesha Kazi
+          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold">
+            Building End-to-End Predictive, Geospatial &amp; Optimization Systems
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-3xl mb-8">
+          Computer Science graduate from <span class="text-slate-200 font-medium">George Mason University (B.S., Dec 2025)</span>.
+          I engineer production-ready machine learning pipelines, state-space graph optimization solvers, and LLM-augmented
+          analytics applications—taking models from raw telemetry all the way to automated cloud deployment.
+        </p>
+
+        <!-- Primary CTAs -->
+        <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-12">
+          <a
+            href="#systems"
+            class="px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-obsidian font-semibold text-sm transition-all shadow-lg shadow-sky-500/20 flex items-center gap-2"
+          >
+            Explore Live Systems
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+
+          <a
+            href="https://github.com/Arrowhorse"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-3 rounded-xl bg-surface hover:bg-surfaceHover border border-borderSubtle text-white font-medium text-sm transition-all flex items-center gap-2"
+          >
+            <svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            GitHub (@Arrowhorse)
+          </a>
+
+          <a
+            id="hero-linkedin-btn"
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-3 rounded-xl bg-surface hover:bg-surfaceHover border border-borderSubtle text-slate-200 font-medium text-sm transition-all flex items-center gap-2"
+          >
+            <svg class="w-4 h-4 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Impact Metric Strip -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-surface border border-borderSubtle rounded-xl p-4">
+            <div class="font-mono text-2xl font-bold text-white">3 Live Apps</div>
+            <div class="text-xs text-slate-400 mt-1">End-to-end deployed ML, AI &amp; optimization systems</div>
+          </div>
+          <div class="bg-surface border border-borderSubtle rounded-xl p-4">
+            <div class="font-mono text-2xl font-bold text-sky-400">100,000+</div>
+            <div class="text-xs text-slate-400 mt-1">Live civic records automated via CI/CD Parquet ETL</div>
+          </div>
+          <div class="bg-surface border border-borderSubtle rounded-xl p-4">
+            <div class="font-mono text-2xl font-bold text-emerald-400">Up to 25%</div>
+            <div class="text-xs text-slate-400 mt-1">Travel distance reduction via A* + Prim's MST</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Deployed Systems Section -->
+    <section id="systems" class="py-16 border-t border-borderSubtle">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-wider text-sky-400">Production Portfolio</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Deployed ML &amp; Optimization Systems</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-2xl">
+            Click <span class="text-slate-200 font-medium">Inspect Architecture</span> on any system to review data flow, algorithmic complexity tradeoffs, and key engineering decisions.
+          </p>
+        </div>
+
+        <!-- Domain Filter Tabs -->
+        <div class="flex flex-wrap gap-2" id="filter-tabs">
+          <button data-filter="all" class="filter-btn active px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-sky-500 text-obsidian transition-all cursor-pointer">
+            All Systems (3)
+          </button>
+          <button data-filter="ml-data" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-surface text-slate-300 border border-borderSubtle hover:border-slate-600 transition-all cursor-pointer">
+            ML &amp; Data Pipelines
+          </button>
+          <button data-filter="optimization" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-surface text-slate-300 border border-borderSubtle hover:border-slate-600 transition-all cursor-pointer">
+            Optimization &amp; Search
+          </button>
+          <button data-filter="geospatial-llm" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-surface text-slate-300 border border-borderSubtle hover:border-slate-600 transition-all cursor-pointer">
+            Geospatial &amp; LLM
+          </button>
+        </div>
+      </div>
+
+      <!-- Cards Grid -->
+      <div id="projects-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically by JS so URLs stay synced with Customizer -->
+      </div>
+    </section>
+
+    <!-- Technical Stack & Engineering Capabilities -->
+    <section id="capabilities" class="py-16 border-t border-borderSubtle">
+      <div class="mb-10">
+        <span class="font-mono text-xs uppercase tracking-wider text-emerald-400">Technical Depth</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Architecture &amp; Engineering Capabilities</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Pillar 1 -->
+        <div class="bg-surface border border-borderSubtle rounded-2xl p-6 hover:border-sky-500/40 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 font-mono font-bold">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-white">Machine Learning &amp; Applied AI</h3>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 leading-relaxed">
+            Designing scalable unsupervised clustering, statistical anomaly detection, and LLM-powered synthesis workflows grounded in domain metrics.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Scikit-Learn</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">MiniBatchKMeans</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Z-Score Anomaly Detection</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Gemini API / LLM Briefing</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Cyclical Feature Encoding</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-surface border border-borderSubtle rounded-2xl p-6 hover:border-emerald-500/40 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono font-bold">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-white">Algorithms &amp; State-Space Search</h3>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 leading-relaxed">
+            Translating combinatorial routing and multi-agent decision problems into admissible heuristic search engines with memoized pruning.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">A* Heuristic Search</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Prim's MST Lower Bounds</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Frozenset Memoization</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">BFS / Uniform Cost</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Minimax &amp; Alpha-Beta</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-surface border border-borderSubtle rounded-2xl p-6 hover:border-sky-500/40 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 font-mono font-bold">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-white">Data Engineering &amp; Automated MLOps</h3>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 leading-relaxed">
+            Eliminating static CSV bottlenecks through live REST API ingestion, columnar Parquet compression, and scheduled CI/CD retraining pipelines.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Socrata REST API</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">OSRM Routing Engine</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Parquet / PyArrow</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">GitHub Actions Cron CI/CD</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Joblib Artifact Serialization</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-surface border border-borderSubtle rounded-2xl p-6 hover:border-emerald-500/40 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono font-bold">
+              04
+            </div>
+            <h3 class="text-lg font-bold text-white">Geospatial &amp; Full-Stack Delivery</h3>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 leading-relaxed">
+            Shipping interactive 3D WebGL maps, trajectory simulators, and executive telemetry dashboards that stakeholders can test immediately.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Python 3</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Streamlit Cloud</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">PyDeck (WebGL)</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Plotly</span>
+            <span class="px-2.5 py-1 rounded-md bg-obsidian border border-borderSubtle font-mono text-xs text-slate-300">Pandas &amp; NumPy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Contact Section -->
+    <section id="education" class="py-16 border-t border-borderSubtle">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Education Card -->
+        <div class="bg-surface border border-borderSubtle rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-wider text-sky-400">Academic Foundation</span>
+            <h2 class="text-2xl font-bold text-white mt-1 mb-6">Education</h2>
+
+            <div class="border-l-2 border-emerald-400 pl-4 py-1">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">George Mason University</h3>
+                <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  Graduated Dec 2025
+                </span>
+              </div>
+              <p class="text-sm font-medium text-slate-300 mt-1">Bachelor of Science in Computer Science</p>
+              <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                Core focus in Artificial Intelligence, Data Mining, Algorithm Design &amp; Analysis, State-Space Search, and Applied Machine Learning.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>Fairfax, Virginia</span>
+            <span>B.S. Computer Science</span>
+          </div>
+        </div>
+
+        <!-- Contact Card -->
+        <div id="contact" class="bg-gradient-to-br from-surface to-slate-900 border border-borderSubtle rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-wider text-emerald-400">Let's Connect</span>
+            <h2 class="text-2xl font-bold text-white mt-1 mb-3">Ready for ML &amp; AI Engineering Teams</h2>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Looking for an engineer who can bridge data pipelines, classical/statistical ML, and deployed user-facing apps? Reach out directly or explore my repositories below.
+            </p>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-obsidian border border-borderSubtle">
+                <div class="flex items-center gap-3 min-w-0">
+                  <svg class="w-5 h-5 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span id="display-email" class="font-mono text-xs sm:text-sm text-slate-200 truncate">ayesha.kazi@example.com</span>
+                </div>
+                <button
+                  onclick="copyText(document.getElementById('display-email').textContent, 'Email copied to clipboard!')"
+                  class="px-3 py-1.5 rounded-lg bg-surface hover:bg-surfaceHover border border-borderSubtle text-xs font-mono text-sky-400 shrink-0 cursor-pointer transition-colors"
+                >
+                  Copy
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="https://github.com/Arrowhorse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3.5 rounded-xl bg-obsidian hover:bg-surfaceHover border border-borderSubtle flex items-center justify-between text-sm font-medium text-white transition-colors"
+                >
+                  <span>GitHub (@Arrowhorse)</span>
+                  <span class="font-mono text-xs text-slate-400">↗</span>
+                </a>
+                <a
+                  id="contact-linkedin-btn"
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3.5 rounded-xl bg-obsidian hover:bg-surfaceHover border border-borderSubtle flex items-center justify-between text-sm font-medium text-white transition-colors"
+                >
+                  <span>LinkedIn Profile</span>
+                  <span class="font-mono text-xs text-sky-400">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-borderSubtle flex items-center justify-between">
+            <span class="text-xs text-slate-500">Need to update your Streamlit or LinkedIn links?</span>
+            <button onclick="openCustomizerModal()" class="text-xs font-mono text-sky-400 hover:underline cursor-pointer">
+              Configure &amp; Export HTML
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-borderSubtle py-8 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© 2026 Ayesha Kazi • Built as a single-file deployable portfolio for GitHub Pages.</p>
+      <div class="flex items-center gap-4 font-mono">
+        <a href="https://github.com/Arrowhorse" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">GitHub</a>
+        <span>•</span>
+        <button onclick="openPitchModal()" class="hover:text-slate-300 transition-colors cursor-pointer">Recruiter Summary</button>
+        <span>•</span>
+        <button onclick="openCustomizerModal()" class="text-sky-400/80 hover:text-sky-400 transition-colors cursor-pointer">Customize URLs</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Architecture Deep-Dive Modal -->
+  <div id="arch-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-surface border border-borderSubtle rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeArchModal()" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-obsidian border border-borderSubtle text-slate-400 hover:text-white flex items-center justify-center cursor-pointer">
+        ✕
+      </button>
+
+      <span id="modal-category" class="font-mono text-xs uppercase tracking-wider text-sky-400">System Architecture</span>
+      <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-white mt-1 mb-4 pr-8">Project Title</h3>
+
+      <div class="space-y-5 text-sm">
+        <div>
+          <h4 class="font-mono text-xs uppercase text-slate-400 mb-2">End-to-End Pipeline Flow</h4>
+          <div id="modal-flow" class="p-3.5 rounded-xl bg-obsidian border border-borderSubtle font-mono text-xs text-emerald-300 leading-relaxed"></div>
+        </div>
+
+        <div>
+          <h4 class="font-mono text-xs uppercase text-slate-400 mb-1.5">Technical Challenge Solved</h4>
+          <p id="modal-challenge" class="text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div>
+          <h4 class="font-mono text-xs uppercase text-slate-400 mb-2">Measurable Engineering Outcomes</h4>
+          <ul id="modal-outcomes" class="space-y-2 text-slate-300 list-disc list-inside"></ul>
+        </div>
+      </div>
+
+      <div class="mt-7 pt-5 border-t border-borderSubtle flex flex-wrap items-center justify-end gap-3">
+        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-obsidian hover:bg-slate-900 border border-borderSubtle text-xs font-mono text-slate-200 transition-colors">
+          View Source Code ↗
+        </a>
+        <a id="modal-live-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-obsidian font-semibold text-xs transition-colors">
+          Launch Live App ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recruiter Quick-Pitch Modal -->
+  <div id="pitch-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-surface border border-borderSubtle rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closePitchModal()" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-obsidian border border-borderSubtle text-slate-400 hover:text-white flex items-center justify-center cursor-pointer">
+        ✕
+      </button>
+
+      <span class="font-mono text-xs uppercase tracking-wider text-emerald-400">60-Second Executive Summary</span>
+      <h3 class="text-xl font-bold text-white mt-1 mb-4">Why Hire Ayesha Kazi?</h3>
+
+      <div id="pitch-text" class="p-4 rounded-xl bg-obsidian border border-borderSubtle text-sm text-slate-300 leading-relaxed space-y-3">
+        <p>
+          <strong>Ayesha Kazi</strong> is a December 2025 B.S. Computer Science graduate from <strong>George Mason University</strong> targeting <strong>Machine Learning Engineer, AI Engineer, and Data Scientist</strong> roles.
+        </p>
+        <p>
+          Rather than stopping at static notebooks, Ayesha builds complete production pipelines: from automated REST API ingestion and Parquet storage, to spatio-temporal clustering, anomaly detection, admissible A* + Prim's MST graph optimization, and live interactive dashboards with CI/CD retraining.
+        </p>
+      </div>
+
+      <div class="mt-6 flex items-center justify-end gap-3">
+        <button
+          onclick="copyText(document.getElementById('pitch-text').innerText, 'Recruiter summary copied!')"
+          class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-obsidian font-semibold text-xs transition-colors cursor-pointer"
+        >
+          Copy Summary for Hiring Team
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customize Live URLs & Export Modal -->
+  <div id="customizer-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-surface border border-borderSubtle rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeCustomizerModal()" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-obsidian border border-borderSubtle text-slate-400 hover:text-white flex items-center justify-center cursor-pointer">
+        ✕
+      </button>
+
+      <span class="font-mono text-xs uppercase tracking-wider text-sky-400">Portfolio Deployment Helper</span>
+      <h3 class="text-xl font-bold text-white mt-1 mb-2">Customize Your Live URLs</h3>
+      <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+        Paste your deployed Streamlit links, LinkedIn URL, and email below. Click <strong class="text-slate-200">Apply &amp; Copy Full HTML</strong> to get an updated single-file <code class="text-sky-400">index.html</code> ready to commit to GitHub Pages.
+      </p>
+
+      <div class="space-y-3.5 text-xs">
+        <div>
+          <label class="block font-mono text-slate-300 mb-1">Contact Email</label>
+          <input id="inp-email" type="email" value="ayesha.kazi@example.com" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-borderSubtle text-white focus:outline-none focus:border-sky-400" />
+        </div>
+        <div>
+          <label class="block font-mono text-slate-300 mb-1">LinkedIn Profile URL</label>
+          <input id="inp-linkedin" type="url" value="https://www.linkedin.com" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-borderSubtle text-white focus:outline-none focus:border-sky-400" />
+        </div>
+        <div>
+          <label class="block font-mono text-slate-300 mb-1">1. Chicago Crime Hotspot Explorer (Streamlit URL)</label>
+          <input id="inp-url-crime" type="url" value="https://chicago-crime-hotspot-explorer.streamlit.app" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-borderSubtle text-white focus:outline-none focus:border-sky-400" />
+        </div>
+        <div>
+          <label class="block font-mono text-slate-300 mb-1">2. Warehouse AMR Route Optimizer (Streamlit URL)</label>
+          <input id="inp-url-warehouse" type="url" value="https://warehouse-amr-route-optimizer.streamlit.app" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-borderSubtle text-white focus:outline-none focus:border-sky-400" />
+        </div>
+        <div>
+          <label class="block font-mono text-slate-300 mb-1">3. B2B Regional Tire Fleet Optimizer (Streamlit URL)</label>
+          <input id="inp-url-fleet" type="url" value="https://b2b-tire-fleet-optimizer.streamlit.app" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-borderSubtle text-white focus:outline-none focus:border-sky-400" />
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-borderSubtle flex flex-wrap items-center justify-end gap-3">
+        <button
+          onclick="applyCustomUrls(false)"
+          class="px-4 py-2.5 rounded-xl bg-obsidian hover:bg-slate-900 border border-borderSubtle text-xs font-mono text-slate-200 cursor-pointer"
+        >
+          Preview Changes
+        </button>
+        <button
+          onclick="applyCustomUrls(true)"
+          class="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-obsidian font-semibold text-xs cursor-pointer"
+        >
+          Apply &amp; Copy Updated index.html
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application State & Interactive Logic -->
+  <script>
+    // Default configuration object (updated dynamically via Customizer Modal)
+    const PORTFOLIO_CONFIG = {
+      email: "ayesha.kazi@example.com",
+      linkedin: "https://www.linkedin.com",
+      projects: [
+        {
+          id: "crime",
+          badge: "ML • Data Pipeline • LLM",
+          categories: ["ml-data", "geospatial-llm"],
+          title: "Chicago Crime Spatio-Temporal Hotspot & AI Explorer",
+          summary:
+            "End-to-end public safety telemetry platform ingesting 100K+ live records into compressed Parquet, uncovering spatio-temporal crime regimes with MiniBatchKMeans, flagging 30-day neighborhood surges via Z-score anomaly detection, and generating Gemini LLM patrol briefings.",
+          metrics: ["100K+ Live Records", "Weekly GitHub Actions CI/CD", "3D PyDeck WebGL"],
+          tags: ["Python", "Scikit-Learn", "MiniBatchKMeans", "Parquet", "PyDeck", "Streamlit", "Gemini API", "GitHub Actions"],
+          githubUrl: "https://github.com/Arrowhorse/chicago-crime-hotspot-explorer",
+          liveUrl: "https://chicago-crime-hotspot-explorer.streamlit.app",
+          architecture: {
+            flow: "Chicago Socrata REST API → Cyclical Feature Engineering (sin/cos Hour & Month) → Compressed Parquet → MiniBatchKMeans + 30-Day Rolling Z-Score → Streamlit + PyDeck + Gemini API (Weekly Cron CI/CD)",
+            challenge:
+              "Replaced a static 1.3 GB local CSV notebook with an automated cloud pipeline and eliminated O(N²) memory bottlenecks by switching to MiniBatchKMeans with sampled silhouette validation and trigonometric cyclical time encoding.",
+            outcomes: [
+              "Ingests and compresses 100,000+ live incidents in seconds using PyArrow Parquet.",
+              "Identifies statistically significant neighborhood spikes (Z > 1.5) across 77 Community Areas.",
+              "Self-updates weekly via automated GitHub Actions workflows with zero manual maintenance."
+            ]
+          }
+        },
+        {
+          id: "warehouse",
+          badge: "Algorithms • Graph Search",
+          categories: ["optimization"],
+          title: "Autonomous Warehouse AMR Route Optimizer",
+          summary:
+            "Multi-stop warehouse order-picking pathfinder formulating SKU collection over (robot_position, unvisited_orders). Guides A* search with an admissible Prim's Minimum Spanning Tree (MST) heuristic and frozenset memoization across fulfillment center layouts.",
+          metrics: ["Up to 25% Fewer Steps", "Memoized MST Cache", "< 5 ms Solve Latency"],
+          tags: ["Python", "A* Search", "Prim's MST", "BFS", "Memoization", "Plotly", "Streamlit"],
+          githubUrl: "https://github.com/Arrowhorse/warehouse-amr-route-optimizer",
+          liveUrl: "https://warehouse-amr-route-optimizer.streamlit.app",
+          architecture: {
+            flow: "Warehouse Topology & SKU Orders → State Space (pos, frozenset_remaining) → A* Search + Cached Prim's MST Lower Bound → Side-by-Side Trajectory Benchmark vs. Greedy BFS",
+            challenge:
+              "Greedy nearest-item routing causes Autonomous Mobile Robots (AMRs) to backtrack across shelving aisles. Implemented an admissible MST heuristic with pairwise distance and frozenset caching to guarantee globally shortest pick tours rapidly.",
+            outcomes: [
+              "Reduces total robot travel distance by up to 25% compared to repeated BFS nearest-item baselines.",
+              "Tracks state expansions, heuristic cache hit rates, and solve latency across 3 shelving topologies.",
+              "Provides an interactive Plotly trajectory simulator for real-time batch testing."
+            ]
+          }
+        },
+        {
+          id: "fleet",
+          badge: "Supply Chain • Geospatial • A*",
+          categories: ["optimization", "geospatial-llm"],
+          title: "B2B Regional Tire Fleet & Route Optimizer",
+          summary:
+            "Commercial multi-stop delivery route planner over real highway networks (OSRM Table & Route APIs). Sequences round-trip B2B tire distributor deliveries using A* + Prim's MST while enforcing box-truck payload capacity and modeling fuel, labor, and CO₂ savings.",
+          metrics: ["Live OSRM Road Graph", "Payload & Cost Modeling", "3 Regional Hubs"],
+          tags: ["Python", "A* Search", "Prim's MST", "OSRM Road API", "PyDeck", "Streamlit", "Logistics"],
+          githubUrl: "https://github.com/Arrowhorse/b2b-tire-fleet-optimizer",
+          liveUrl: "https://b2b-tire-fleet-optimizer.streamlit.app",
+          architecture: {
+            flow: "Regional DC & Store Orders → OSRM N×N Highway Drive-Time/Distance Matrix → Payload Capacity Check → A* + Prim's MST Round-Trip Solver → PyDeck Highway Geometry & Cost Breakdown",
+            challenge:
+              "Translated indoor grid search onto real-world highway graphs by precomputing an N×N road travel matrix via OpenStreetMap (with Haversine circuity fallback) and solving exact round-trip stop sequencing in milliseconds.",
+            outcomes: [
+              "Cuts fleet mileage, driver hours, fuel burn, and CO₂ emissions versus unoptimized FIFO manifests.",
+              "Enforces commercial box-truck tire payload constraints across Northern Virginia, Chicagoland, and DFW hubs.",
+              "Renders actual turn-by-turn highway polylines on an interactive PyDeck map."
+            ]
+          }
+        }
+      ]
+    };
+
+    let currentFilter = "all";
+
+    function renderProjects() {
+      const grid = document.getElementById("projects-grid");
+      const filtered =
+        currentFilter === "all"
+          ? PORTFOLIO_CONFIG.projects
+          : PORTFOLIO_CONFIG.projects.filter((p) => p.categories.includes(currentFilter));
+
+      grid.innerHTML = filtered
+        .map(
+          (proj) => `
+          <article class="bg-surface border border-borderSubtle hover:border-sky-500/50 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-lg hover:shadow-sky-500/5">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                  ${proj.badge}
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white leading-snug mb-3">
+                ${proj.title}
+              </h3>
+
+              <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                ${proj.summary}
+              </p>
+
+              <!-- Key Metrics Pills -->
+              <div class="grid grid-cols-1 gap-1.5 mb-5 p-3 rounded-xl bg-obsidian border border-borderSubtle">
+                ${proj.metrics
+                  .map(
+                    (m) => `
+                  <div class="flex items-center gap-2 text-xs font-mono text-emerald-400">
+                    <span class="text-emerald-500">▸</span> ${m}
+                  </div>
+                `
+                  )
+                  .join("")}
+              </div>
+
+              <!-- Tech Stack Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                ${proj.tags
+                  .map(
+                    (tag) => `
+                  <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 font-mono text-[11px]">
+                    ${tag}
+                  </span>
+                `
+                  )
+                  .join("")}
+              </div>
+            </div>
+
+            <!-- Action Footer -->
+            <div class="pt-4 border-t border-borderSubtle flex flex-col gap-2.5">
+              <div class="grid grid-cols-2 gap-2.5">
+                <a
+                  href="${proj.liveUrl}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-obsidian font-semibold text-xs text-center transition-colors"
+                >
+                  Live App ↗
+                </a>
+                <a
+                  href="${proj.githubUrl}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-2.5 rounded-xl bg-obsidian hover:bg-slate-900 border border-borderSubtle text-slate-200 font-mono text-xs text-center transition-colors"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+              <button
+                onclick="openArchModal('${proj.id}')"
+                class="w-full py-2 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-sky-300 font-mono text-xs transition-colors cursor-pointer"
+              >
+                Inspect Architecture &amp; Tradeoffs
+              </button>
+            </div>
+          </article>
+        `
+        )
+        .join("");
+    }
+
+    // Filter Button Listeners
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach((b) => {
+          b.classList.remove("bg-sky-500", "text-obsidian");
+          b.classList.add("bg-surface", "text-slate-300", "border", "border-borderSubtle");
+        });
+        btn.classList.remove("bg-surface", "text-slate-300", "border", "border-borderSubtle");
+        btn.classList.add("bg-sky-500", "text-obsidian");
+        currentFilter = btn.getAttribute("data-filter");
+        renderProjects();
+      });
+    });
+
+    // Architecture Modal Controls
+    function openArchModal(projectId) {
+      const proj = PORTFOLIO_CONFIG.projects.find((p) => p.id === projectId);
+      if (!proj) return;
+
+      document.getElementById("modal-category").textContent = proj.badge;
+      document.getElementById("modal-title").textContent = proj.title;
+      document.getElementById("modal-flow").textContent = proj.architecture.flow;
+      document.getElementById("modal-challenge").textContent = proj.architecture.challenge;
+      document.getElementById("modal-outcomes").innerHTML = proj.architecture.outcomes
+        .map((item) => `<li>${item}</li>`)
+        .join("");
+      document.getElementById("modal-github-link").href = proj.githubUrl;
+      document.getElementById("modal-live-link").href = proj.liveUrl;
+
+      const modal = document.getElementById("arch-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeArchModal() {
+      const modal = document.getElementById("arch-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    // Recruiter Pitch Modal Controls
+    function openPitchModal() {
+      const modal = document.getElementById("pitch-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closePitchModal() {
+      const modal = document.getElementById("pitch-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    // URL Customizer Modal Controls
+    function openCustomizerModal() {
+      document.getElementById("inp-email").value = PORTFOLIO_CONFIG.email;
+      document.getElementById("inp-linkedin").value = PORTFOLIO_CONFIG.linkedin;
+      document.getElementById("inp-url-crime").value = PORTFOLIO_CONFIG.projects[0].liveUrl;
+      document.getElementById("inp-url-warehouse").value = PORTFOLIO_CONFIG.projects[1].liveUrl;
+      document.getElementById("inp-url-fleet").value = PORTFOLIO_CONFIG.projects[2].liveUrl;
+
+      const modal = document.getElementById("customizer-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeCustomizerModal() {
+      const modal = document.getElementById("customizer-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function applyCustomUrls(exportHtml) {
+      PORTFOLIO_CONFIG.email = document.getElementById("inp-email").value.trim() || PORTFOLIO_CONFIG.email;
+      PORTFOLIO_CONFIG.linkedin = document.getElementById("inp-linkedin").value.trim() || PORTFOLIO_CONFIG.linkedin;
+      PORTFOLIO_CONFIG.projects[0].liveUrl = document.getElementById("inp-url-crime").value.trim() || PORTFOLIO_CONFIG.projects[0].liveUrl;
+      PORTFOLIO_CONFIG.projects[1].liveUrl = document.getElementById("inp-url-warehouse").value.trim() || PORTFOLIO_CONFIG.projects[1].liveUrl;
+      PORTFOLIO_CONFIG.projects[2].liveUrl = document.getElementById("inp-url-fleet").value.trim() || PORTFOLIO_CONFIG.projects[2].liveUrl;
+
+      document.getElementById("display-email").textContent = PORTFOLIO_CONFIG.email;
+      document.getElementById("hero-linkedin-btn").href = PORTFOLIO_CONFIG.linkedin;
+      document.getElementById("contact-linkedin-btn").href = PORTFOLIO_CONFIG.linkedin;
+      renderProjects();
+      closeCustomizerModal();
+
+      if (exportHtml) {
+        // Serialize full document with updated config values baked in
+        let fullSource = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+        copyText(fullSource, "Updated index.html copied! Paste into your GitHub Pages repo.");
+      } else {
+        showToast("Live URLs updated in preview!");
+      }
+    }
+
+    // Clipboard Utility (iFrame-safe fallback)
+    function copyText(text, toastMsg) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(toastMsg);
+      } catch (err) {
+        showToast("Unable to copy automatically.");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      document.getElementById("toast-message").textContent = msg;
+      toast.classList.remove("hidden");
+      requestAnimationFrame(() => {
+        toast.classList.remove("translate-y-2", "opacity-0");
+      });
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("translate-y-2", "opacity-0");
+        setTimeout(() => toast.classList.add("hidden"), 300);
+      }, 3000);
+    }
+
+    // Close modals on backdrop click
+    ["arch-modal", "pitch-modal", "customizer-modal"].forEach((id) => {
+      document.getElementById(id).addEventListener("click", (e) => {
+        if (e.target.id === id) {
+          document.getElementById(id).classList.add("hidden");
+          document.getElementById(id).classList.remove("flex");
+        }
+      });
+    });
+
+    // Initial Render
+    renderProjects();
+  </script>
+</body>
+</html>
